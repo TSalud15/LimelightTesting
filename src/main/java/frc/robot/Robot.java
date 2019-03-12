@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.BlinkLimelight;
 import frc.robot.subsystems.Limelight;
 
 /**
@@ -37,8 +37,8 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     limelight = new Limelight();
     m_oi = new OI();
-    m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
-    // chooser.addOption("My Auto", new MyAutoCommand());
+    m_chooser.setDefaultOption("Default Auto", new BlinkLimelight());
+    //chooser.addOption("My Auto", new BlinkLimelight());
     SmartDashboard.putData("Auto mode", m_chooser);
     limelight.reportToSmartDashboard();
   }
